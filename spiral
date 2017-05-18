@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <math.h>
+int main(int argc, char *argv[])
+{   int j=0; int i=0;
+    int k=0;
+    int z=1; int M; int N; int a[100][100];
+    
+    scanf("%d%d",&M, &N);
+    while(z<=M*N)
+    {
+        i=k;
+        for(j=k;j<=M-1-k;j++)
+        {
+            a[i][j]=z;
+            z++;
+        }
+        
+        j=M-1-k;
+        for(i=1+k;i<N-1-k;i++)
+        {
+            a[i][j]=z;
+            z++;
+        }
+        i=N-1-k;
+        j=M-1-k;
+        while( j>=k &&  z<=M*N)
+        {
+            a[i][j]=z;
+            z++;
+            j--;}
+        
+        i=N-2-k;
+        j=k;
+        
+        while (i>k && z <= M*N)
+            
+        {
+            a[i][j]=z;
+            z++;
+            i--;
+        }
+        k ++;
+    }
+    for(i=0;i<N;i++)
+    { for(j=0;j<M;j++)
+            printf("%d ",a[i][j]);
+        printf("\n");
+    }
+    return 0;
+}
