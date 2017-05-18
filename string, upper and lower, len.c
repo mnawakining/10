@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     if (strcmp(str,"quit") == 0) return 0;//сравнивание строк
     else
     {
-        printf("String lenght: %d \n", strlen(str));//вывод длины строки
+        printf("String length: %d \n", strlen(str));//вывод длины строки
         while(str[i] != '\0')//пока не встр. символ окончания строки
         {
             putchar(tolower(str[i])); //преобразование символа к нижнему регистру и вывод символа по коду
