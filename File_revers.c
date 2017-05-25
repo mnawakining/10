@@ -1,39 +1,39 @@
 #include <stdio.h>
 
-void reverse(char str[])
+void reverse(char str[])//функция воид , ничего не возвращает (поэтому вызывается без присваивания к какой либо переменной см. в main)
 {
-  int i =0;
-  if (strlen(str) == 0) printf("%s", "Empty string!\n");
+  int i =0; //локальная переменная i
+  if (strlen(str) == 0) printf("%s", "Empty string!\n");//если длина строки равна нулю, выводи сообщение об ошибке
 
-  else {
-  for(i=strlen(str)-1; i >= 0 ; i--)
+  else {//в противном случае
+  for(i=strlen(str)-1; i >= 0 ; i--) //идем от конца строки до начала ...
           {
-            printf("%c", str[i]);
+            printf("%c", str[i]);//...и выводим посимвольно
           }
     }
 }
 
 int main(int argc, char *argv[])
     {
-    FILE *f;
-    char fileName[20];
-    int i;
-    char str[100] = "", newstr[100];
+    FILE *f;//обявляем переменую файл
+    char fileName[20]; 
+    char str[100] = "";
 
-    scanf("%s", fileName);
+    scanf("%s", fileName); //вводим название директории
 
-    if (strcmp(fileName, "-") == 0) scanf("%s", str);
-    else
+    if (strcmp(fileName, "-") == 0) scanf("%s", str); //если "-", то читаем строку из стандартного потока ввода stdin
+    else //в противном случае
     {
-        f = fopen(fileName, "r");
-        if (f == NULL) printf("%s", "Empty file!\n");
-        else{
+        f = fopen(fileName, "r"); //открываем файл с путем fileName, для чтения 
+        if (f == NULL) printf("%s", "Empty file!\n"); //если файл не удалось открыть файл, выводим сообщение об ошибке
+                                                      //(не удалось указать адрес на область памяти, где хранится файл)
+        else{//в противном случае (если файл удалось открыть)
 
-        fgets(str,100,f);
+        fgets(str,100,f);//считываем строку из файла в str (первые 100 символов) из файла f
 
-        fclose(f);
+        fclose(f); //закрываем файл
         }
     }
-    reverse(str);
+    reverse(str);//применяем функцию reverse к считанной строке (описание перед main)
     return 0;
     }
