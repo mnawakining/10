@@ -6,12 +6,10 @@ int main(int argc, char *argv[])
 {
 
 FILE *f;//обявляем переменую файл
-char fileName[20];
+char fileName[20] = "genome.txt";
 char str[600000] = "", s[6];
 char beg[6] = "TTGACA", end[6] = "TATAAT";
 int i=0, ibeg=0, iend=0, flag =0, g = 0, countH = 0;
-
-scanf("%s", fileName); //вводим название директории
 
 
 
