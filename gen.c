@@ -32,7 +32,7 @@ scanf("%s", fileName); //вводим название директории
             ibeg = i;
             i += 15+6;
 
-            while (g < 4 && flag == 0)
+            while (g < 5 && flag == 0)
             {
                 if (str[i] == 'T' && str[i+1] == 'A' && str[i+2] == 'T' && str[i+3] == 'A' && str[i+4] == 'A' && str[i+5] == 'T')
                 {
