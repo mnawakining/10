@@ -6,8 +6,8 @@ int main(int argc, char *argv[])
 {
 
 FILE *f;//обявляем переменую файл
-char fileName[20] = "genome.txt";
-char str[600000] = "";
+char fileName[20] = "u.txt";
+char str[600000] = "", s[600000]; char *er;
 int i=0, ibeg=0, iend=0, flag =0, g = 0, H = 0, j = 0;
 
     scanf("%d",&H);
@@ -16,10 +16,19 @@ int i=0, ibeg=0, iend=0, flag =0, g = 0, H = 0, j = 0;
     if (f == NULL) printf("%s", "Empty file!\n"); //если файл не удалось открыть файл, выводим сообщение об ошибке
                                                   //(не удалось указать адрес на область памяти, где хранится файл)
     else{//в противном случае (если файл удалось открыть)
-
-    fgets(str,600000,f);//считываем строку из файла в str (первые 100 символов) из файла f
+        
+        
+    er = fgets(s,100,f);
+    while (er != NULL) {//пока файл не закончится будем читать строки
+    s[strlen(s) - 1] = 0;
+    strcat(str,s);
+    er = fgets(s,100,f);
+        
+        
+    }
 
     fclose(f); //закрываем файл
+
     }
 
     for(i=0; i < strlen(str); i++){
