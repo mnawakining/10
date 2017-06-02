@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
 {
 
 FILE *f;//обявляем переменую файл
-char fileName[20] = "u.txt";
+char fileName[20] = "genome.txt";
 char str[600000] = "", s[600000]; char *er;
 int i=0, ibeg=0, iend=0, flag =0, g = 0, H = 0, j = 0;
 
